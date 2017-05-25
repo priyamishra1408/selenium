@@ -35,6 +35,8 @@ public class SeleniumWebDriver {
 		
 		browser = browser.replace("\"", "");
 		url = url.replace("\"", "");
+		
+		String driverPath = GlobalData.globalSheetMap.get("driver");
 
 		if (browser.equalsIgnoreCase("firefox")) {
 			// create firefox instance
@@ -43,7 +45,7 @@ public class SeleniumWebDriver {
 		// Check if parameter passed as 'chrome'
 		else if (browser.equalsIgnoreCase("chrome")) {
 			// set path to chromedriver.exe
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\prmishra\\Downloads\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", driverPath);
 			// create chrome instance
 			webdriver = new ChromeDriver();
 		}
